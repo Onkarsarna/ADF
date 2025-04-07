@@ -1,0 +1,28 @@
+{
+	"name": "HTTP Covid CSV",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "HTTP CSV Covid",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"sourceRelativeURL": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv",
+					"sinkFileName": "cases_deaths.csv"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 15,
+				"startTime": "2024-11-28T23:28:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

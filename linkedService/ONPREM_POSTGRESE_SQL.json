@@ -1,0 +1,22 @@
+{
+	"name": "ONPREM_POSTGRESE_SQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Postgrese On Prem Sql",
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "Postgrese On Prem Server",
+			"port": 5432,
+			"database": "demo",
+			"username": "postgres",
+			"sslMode": 2,
+			"authenticationType": "Basic",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2MTk3NzFlNS1iZmEzLTQ1ZWYtYmVlYi03ZTAyMTdiMjJlOTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

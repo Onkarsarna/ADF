@@ -1,0 +1,19 @@
+{
+	"name": "HttpServerForJsonLinks",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "It is having json file as source and taking data from it",
+		"parameters": {
+			"sourceBaseUrl": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "@{linkedService().sourceBaseUrl}",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

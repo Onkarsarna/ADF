@@ -1,0 +1,19 @@
+{
+	"name": "TaxpodJson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Taxpod Question API",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/questions/getQuestion?removeIsSpouse=-1"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

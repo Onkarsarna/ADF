@@ -1,0 +1,14 @@
+{
+	"name": "ls_dynamic_git_ansh_lamba",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Created this for to get all data from Ansh Lamba repo (Dynamic Pipeline)",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://raw.githubusercontent.com",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "DataMigrationPGSToCLoud",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c235bbb8-259d-4965-841d-554d95b1d359",
+		"tenantId": "add46c2d-4a8b-4882-a1f7-2eb4a076d513"
+	}
+}

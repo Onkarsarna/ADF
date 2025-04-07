@@ -1,0 +1,7 @@
+{
+	"name": "SelfHostedForSSMS",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Used to Connect to  SSMS "
+	}
+}

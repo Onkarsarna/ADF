@@ -1,0 +1,22 @@
+{
+	"name": "OnPremSqlServerSSMS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Microsoft SQL Server",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "user",
+			"database": "AdventureWorksLT2017",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "onkar",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4NTc4M2EzMC00NGY4LTQ5ZmQtOWM3NC1hZDcyM2FhMGYzMmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfHostedForSSMS",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
