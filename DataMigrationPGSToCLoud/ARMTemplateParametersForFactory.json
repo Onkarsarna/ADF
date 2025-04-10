@@ -1,0 +1,93 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DataMigrationPGSToCLoud"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"ONPREM_POSTGRESE_SQL_password": {
+			"value": ""
+		},
+		"OnPremSqlServerSSMS_password": {
+			"value": ""
+		},
+		"PostgreSql1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://onkonpremsa.dfs.core.windows.net/"
+		},
+		"HTTP Covid Cases_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"HTTP_AnshLambaGit_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"HttpServerForJsonLinks_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceBaseUrl}"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_server": {
+			"value": "Postgrese On Prem Server"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_database": {
+			"value": "demo"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_username": {
+			"value": "postgres"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_server": {
+			"value": "user"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_database": {
+			"value": "AdventureWorksLT2017"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_userName": {
+			"value": "onkar"
+		},
+		"PostgreSql1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"PostgreSql1_properties_typeProperties_database": {
+			"value": "onkar"
+		},
+		"PostgreSql1_properties_typeProperties_username": {
+			"value": "onkar"
+		},
+		"RestServiceTaxpod_properties_typeProperties_url": {
+			"value": "https://tax.foxraving.com"
+		},
+		"Taxpod Question API_properties_typeProperties_url": {
+			"value": "https://tax.foxraving.com"
+		},
+		"ls_dynamic_git_ansh_lamba_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sourceRelativeURL": {
+			"value": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
+		},
+		"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sinkFileName": {
+			"value": "cases_deaths.csv"
+		},
+		"AnshLambaIncrementalGit_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"value": "incrementaldata.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"value": "Incremental_Data_Learn"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"value": "adminOnkar"
+		}
+	}
+}

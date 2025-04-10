@@ -1,0 +1,298 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataMigrationPGSToCLoud"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"ONPREM_POSTGRESE_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ONPREM_POSTGRESE_SQL'"
+		},
+		"OnPremSqlServerSSMS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'OnPremSqlServerSSMS'"
+		},
+		"PostgreSql1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PostgreSql1'"
+		},
+		"AzureSqlDatabase_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://onkonpremsa.dfs.core.windows.net/"
+		},
+		"HTTP Covid Cases_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
+		"HTTP_AnshLambaGit_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"HttpServerForJsonLinks_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().sourceBaseUrl}"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "Postgrese On Prem Server"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "demo"
+		},
+		"ONPREM_POSTGRESE_SQL_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "postgres"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "user"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT2017"
+		},
+		"OnPremSqlServerSSMS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "onkar"
+		},
+		"PostgreSql1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"PostgreSql1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "onkar"
+		},
+		"PostgreSql1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "onkar"
+		},
+		"RestServiceTaxpod_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://tax.foxraving.com"
+		},
+		"Taxpod Question API_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://tax.foxraving.com"
+		},
+		"ls_dynamic_git_ansh_lamba_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
+		"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sourceRelativeURL": {
+			"type": "string",
+			"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/cases_deaths.csv"
+		},
+		"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sinkFileName": {
+			"type": "string",
+			"defaultValue": "cases_deaths.csv"
+		},
+		"AnshLambaIncrementalGit_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"AzureSqlDatabase_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "incrementaldata.database.windows.net"
+		},
+		"AzureSqlDatabase_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Incremental_Data_Learn"
+		},
+		"AzureSqlDatabase_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminOnkar"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DataMigrationPGSToCLoud_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureSqlDatabase_password": {
+						"value": "[parameters('AzureSqlDatabase_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"HTTP Covid Cases_properties_typeProperties_url": {
+						"value": "[parameters('HTTP Covid Cases_properties_typeProperties_url')]"
+					},
+					"HTTP_AnshLambaGit_properties_typeProperties_url": {
+						"value": "[parameters('HTTP_AnshLambaGit_properties_typeProperties_url')]"
+					},
+					"HttpServerForJsonLinks_properties_typeProperties_url": {
+						"value": "[parameters('HttpServerForJsonLinks_properties_typeProperties_url')]"
+					},
+					"RestServiceTaxpod_properties_typeProperties_url": {
+						"value": "[parameters('RestServiceTaxpod_properties_typeProperties_url')]"
+					},
+					"Taxpod Question API_properties_typeProperties_url": {
+						"value": "[parameters('Taxpod Question API_properties_typeProperties_url')]"
+					},
+					"ls_dynamic_git_ansh_lamba_properties_typeProperties_url": {
+						"value": "[parameters('ls_dynamic_git_ansh_lamba_properties_typeProperties_url')]"
+					},
+					"AnshLambaIncrementalGit_properties_typeProperties_url": {
+						"value": "[parameters('AnshLambaIncrementalGit_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "DataMigrationPGSToCLoud_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ONPREM_POSTGRESE_SQL_password": {
+						"value": "[parameters('ONPREM_POSTGRESE_SQL_password')]"
+					},
+					"OnPremSqlServerSSMS_password": {
+						"value": "[parameters('OnPremSqlServerSSMS_password')]"
+					},
+					"PostgreSql1_password": {
+						"value": "[parameters('PostgreSql1_password')]"
+					},
+					"ONPREM_POSTGRESE_SQL_properties_typeProperties_server": {
+						"value": "[parameters('ONPREM_POSTGRESE_SQL_properties_typeProperties_server')]"
+					},
+					"ONPREM_POSTGRESE_SQL_properties_typeProperties_database": {
+						"value": "[parameters('ONPREM_POSTGRESE_SQL_properties_typeProperties_database')]"
+					},
+					"ONPREM_POSTGRESE_SQL_properties_typeProperties_username": {
+						"value": "[parameters('ONPREM_POSTGRESE_SQL_properties_typeProperties_username')]"
+					},
+					"OnPremSqlServerSSMS_properties_typeProperties_server": {
+						"value": "[parameters('OnPremSqlServerSSMS_properties_typeProperties_server')]"
+					},
+					"OnPremSqlServerSSMS_properties_typeProperties_database": {
+						"value": "[parameters('OnPremSqlServerSSMS_properties_typeProperties_database')]"
+					},
+					"OnPremSqlServerSSMS_properties_typeProperties_userName": {
+						"value": "[parameters('OnPremSqlServerSSMS_properties_typeProperties_userName')]"
+					},
+					"PostgreSql1_properties_typeProperties_server": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_server')]"
+					},
+					"PostgreSql1_properties_typeProperties_database": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_database')]"
+					},
+					"PostgreSql1_properties_typeProperties_username": {
+						"value": "[parameters('PostgreSql1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataMigrationPGSToCLoud_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "DataMigrationPGSToCLoud_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataMigrationPGSToCLoud_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "DataMigrationPGSToCLoud_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sourceRelativeURL": {
+						"value": "[parameters('HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sourceRelativeURL')]"
+					},
+					"HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sinkFileName": {
+						"value": "[parameters('HTTP Covid CSV_properties_HTTP CSV Covid_parameters_sinkFileName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataMigrationPGSToCLoud_ArmTemplate_2')]"
+			]
+		}
+	]
+}
